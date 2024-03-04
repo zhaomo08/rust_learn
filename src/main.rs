@@ -13,4 +13,12 @@ fn main() {
 
     println!("The value of A_CONST is {}",A_CONST);
 
+
+    let c ='z';
+    let z ='Z';
+    let heart_eyed_cat ='😻';
+
+    println!("{} {} {}",c,z,heart_eyed_cat);
+
+
 }
