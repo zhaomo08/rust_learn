@@ -4,8 +4,15 @@
 // 常量: const  关键字
 
 use core::slice;
+use std::net::IpAddr;
 
 const A_CONST: i32 = 42;
+
+
+enum IPAddr {
+    IPv4(u8,u8,u8,u8),
+    IPV6(u8,u8,u8,u8,u8,u8,u8,u8,u8,u8,u8,u8,u8,u8,u8,u8)
+}
 fn main() {
     let mut x = 5;
     println!("The value of x is {}",x);
@@ -67,6 +74,48 @@ fn main() {
     // if slice2.is_empty()
     
 
+    // 元祖结构
+    struct  Pair(i32, f32);
+
+    // 标准的 C 结构
+    #[derive(Debug)]  // 派生属性
+    struct Person{
+        name: String,
+        age: u32,
+    }
+
+    // 单元结构(无字段, 通常范型里使用较多)
+    struct Unit;
+
+    let pair = Pair(10,4.2);
+
+    // struct.member
+
+    println!("{}" ,pair.0);
+
+    let jack = Person{
+        name:String::from("jack"),
+        age:6
+    }; 
+    println!("name ={} ,age = {}" ,jack.name,jack.age);
+    println!("{:?}",jack);
+
+
+    let unit = Unit;
+
+
+
+
+    // enum
+    let localhost: IPAddr =IPAddr::IPv4(127, 0, 0, 1);
+
+    match localhost{
+        IPAddr::IPv4(a,b,c,d) =>{
+            println!("{} {} {} {}",a,b,c,d);
+        }
+        _ => {}
+    }
+     
     
 }
  
