@@ -13,6 +13,11 @@ enum IPAddr {
     IPv4(u8,u8,u8,u8),
     IPV6(u8,u8,u8,u8,u8,u8,u8,u8,u8,u8,u8,u8,u8,u8,u8,u8)
 }
+
+enum Symbol {
+    Char(char),
+    Number,
+}
 fn main() {
     let mut x = 5;
     println!("The value of x is {}",x);
@@ -137,11 +142,26 @@ fn main() {
         s += n;
         n -= 1; 
     };
-    println!("{:?}",a)
+    println!("{:?}",a);
 
 
+    //  iter 
+    let mut myarray = [1, 2, 3]; // ×2
+
+    for i in myarray.iter_mut() {
+        *i *= 2;
+    }
+    for i in myarray.iter(){
+        println! ("{}", i);
+    } 
 
     
+    //  
+    let letter = Symbol::Char('A');
+
+    if let Symbol::Char(x) =letter {
+        println!("{}",x);
+    }
 
 }
  
