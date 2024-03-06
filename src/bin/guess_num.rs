@@ -1,4 +1,3 @@
-use core::num;
 use std::io::{self, Read};
 use rand::Rng;
 
