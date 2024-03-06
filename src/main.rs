@@ -116,6 +116,32 @@ fn main() {
         _ => {}
     }
      
+
+    // if 表达式  实现 C语言中的三值表达式的功能
+    let cond = true;
+    let a = if cond {
+        println!("{}",42);
+    }else {
+        println!("{}",24);
+
+    };
+
+    // loop 表达式的break 语句后可跟着一个返回值返回
+    let mut s = 0;
+    let mut n = 10;
     
+    let a = loop {
+        if n < 0{
+            break s;
+        }
+        s += n;
+        n -= 1; 
+    };
+    println!("{:?}",a)
+
+
+
+    
+
 }
  
